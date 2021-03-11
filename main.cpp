@@ -9,9 +9,9 @@
 #include <sstream>
 #include <vector>
 using namespace std;
-//int Autotest();
+int Autotest();
 int main () {
-//Autotest();
+Autotest();
 string str;
 ifstream fin("zhozhozho.txt");
 if (fin.fail()) {
@@ -33,7 +33,7 @@ CComplexVector* tmp;
 fin.clear();
 fin.seekg(0);
 while(getline(fin,str)){
-        istringstream ss(str);//Р Р°Р±РѕС‚Р°РµРј СЃРѕ СЃС‚СЂРѕРєРѕР№ РєР°Рє СЃ РІС…РѕРґРЅС‹Рј С„Р°Р№Р»РѕРј
+        istringstream ss(str);//Работаем со строкой как с входным файлом
         ss >> x;
         ss >> filename;
         ss >> m;
@@ -43,10 +43,10 @@ while(getline(fin,str)){
 	else{
 		tmp = new CComplexVector1(m);
 	}
-        tmp->setFilename(filename.c_str());//РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј char *  РІ filename
+        tmp->setFilename(filename.c_str());//Устанавливаем char *  в filename
         for(int j = 0; j < m; j++){
 		 ss >> re >> im;
-		 tmp->set(j,CComplexPoint(re,im));//РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РјР°СЃСЃРёРІ e РІС…РѕРґРЅС‹РјРё РґР°РЅРЅС‹РјРё	
+		 tmp->set(j,CComplexPoint(re,im));//Инициализируем массив e входными данными	
 	}
 	arr[i++] = tmp;
 }
